@@ -50,7 +50,7 @@ const getImage = size => response => {
 H(cards)
   .ratelimit(1, 100)
   .flatMap(getCardInfo)
-  .map(getImage("normal")) // [small,normal,large,png,art_crop,border_crop]
+  .map(getImage("png")) // [small,normal,large,png,art_crop,border_crop]
   .flatMap(saveImage)
   .errors(console.log)
   .done(() => {});
